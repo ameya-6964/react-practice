@@ -1,12 +1,15 @@
 import React from "react";
 
-import { pizzaData } from "../data/data";
-
-const Pizza = () => {
+const Pizza = (props) => {
   return (
-    <div>
-      <h2>Pizza</h2>
-    </div>
+    <li className="pizza">
+      <img src={props.pizzaObject.photoName} alt={props.pizzaObject.name} />
+      <div>
+        <h3>{props.pizzaObject.name}</h3>
+        <p> {props.pizzaObject.ingredients} </p>
+        <span>{props.pizzaObject.price}</span>
+      </div>
+    </li>
   );
 };
 
