@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-practice/tree/main/04-movie-app-with-react/static/css/main.fe22c8c4.css",
+    "main.js": "/react-practice/tree/main/04-movie-app-with-react/static/js/main.02416f7a.js",
+    "index.html": "/react-practice/tree/main/04-movie-app-with-react/index.html",
+    "static/media/search.svg": "/react-practice/tree/main/04-movie-app-with-react/static/media/search.db964b809d21320fb503cb05f4dc8a09.svg",
+    "main.fe22c8c4.css.map": "/react-practice/tree/main/04-movie-app-with-react/static/css/main.fe22c8c4.css.map",
+    "main.02416f7a.js.map": "/react-practice/tree/main/04-movie-app-with-react/static/js/main.02416f7a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe22c8c4.css",
+    "static/js/main.02416f7a.js"
+  ]
+}
