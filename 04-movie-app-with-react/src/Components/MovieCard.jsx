@@ -1,24 +1,24 @@
 import React from "react";
 
-const MovieCard = ({ DummyData }) => {
+const MovieCard = ({ movie }) => {
   return (
     <div className="movie">
       <div>
-        <p>{DummyData.Year}</p>
+        <p>{movie.Year}</p>
       </div>
       <div>
         <img
           src={
-            DummyData.Poster !== "N/A"
-              ? DummyData.Poster
+            movie.Poster !== "N/A"
+              ? movie.Poster
               : "https://via.placeholder.com/400"
           }
-          alt={DummyData.Title}
+          alt={movie.Title}
         />
       </div>
       <div>
-        <span>{DummyData.Type}</span>
-        <h3>{DummyData.Title}</h3>
+        <span>{movie.Type}</span>
+        <h3>{movie.Title}</h3>
       </div>
     </div>
   );
