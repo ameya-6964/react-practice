@@ -12,9 +12,14 @@ import ReactDOM from "react-dom/client";
   )
 ); */
 
-//! After JSX
-const jsxHeadind = <h1>Hello World From JSX 🚀</h1>;
+//! After JSX  (JSX Is Not HTML => Its HTML and XML Like Syntax)
+
+//* For Attributes Always Use Camel Case
+
+const jsxHeadind = <h1 className="heading">Hello World From JSX 🚀</h1>;
+
 //! JSX is Transpiled Before It Reaches The JS - BABEL
 //! JSX => React.createElement => JS Object => HTML Element
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(jsxHeadind);
