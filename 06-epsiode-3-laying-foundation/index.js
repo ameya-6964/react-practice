@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Title from "./Title";
 
 //! Before JSX
 /* const parent = React.createElement(
@@ -37,14 +38,16 @@ root.render(multiLineJsxHeading); */
 
 // * React Functional Component => It Is Judt Normal JavaScript Function
 
+//! This Below Code Is Also Called Component Composition => Component Inside Another Component
 const HeadingComponent = () => {
   return (
-    <>
-      <h1> Hello World</h1>
+    <div id="container">
+      <Title />
       <p> Hello World I Am From Functional Component</p>
-    </>
+    </div>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<HeadingComponent />);
+//root.render(<HeadingComponent></HeadingComponent>);
