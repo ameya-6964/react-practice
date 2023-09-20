@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 //! Before JSX
-c; /* onst parent = React.createElement(
+/* const parent = React.createElement(
   "div",
   { id: "parent" },
   React.createElement(
