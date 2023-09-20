@@ -4,7 +4,8 @@
   "description": "Akshay Saini Namaste React Course Practice",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index1.html"
   },
   "keywords": [
     "react"
