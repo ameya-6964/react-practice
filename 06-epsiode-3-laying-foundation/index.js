@@ -44,10 +44,22 @@ const HeadingComponent = () => {
     <div id="container">
       {/* React Element Inside Component 👇 */}
       <h1>{Math.floor(Math.random() * 100) + 1}</h1>
-      {/* React Element Inside Component 👆 */}
+      {/* React Element Inside Component 👇  */}
+      {multiLineJsxHeading}
       <Title />
       <p> Hello World I Am From Functional Component</p>
+      <Name firstName={"Ameya"} lastName={"Belvalkar"} />
+      <Name firstName={"Jayesh"} lastName={"Patil"} />
     </div>
+  );
+};
+
+const Name = (props) => {
+  return (
+    <>
+      <h1>{props.firstName}</h1>
+      <h2>{props.lastName}</h2>
+    </>
   );
 };
 
