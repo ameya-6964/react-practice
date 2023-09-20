@@ -30,3 +30,18 @@
   margin: 20px;
   font-size: 1.2rem;
 }
+
+.search {
+  padding: 10px;
+}
+
+.res-card {
+  width: 300px;
+  height: 350px;
+  border: 1px solid black;
+  margin: 1rem;
+  text-align: center;
+}
+.res-card h3 {
+  margin-top: 10px;
+}
