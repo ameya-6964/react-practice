@@ -42,6 +42,9 @@ root.render(multiLineJsxHeading); */
 const HeadingComponent = () => {
   return (
     <div id="container">
+      {/* React Element Inside Component 👇 */}
+      <h1>{Math.floor(Math.random() * 100) + 1}</h1>
+      {/* React Element Inside Component 👆 */}
       <Title />
       <p> Hello World I Am From Functional Component</p>
     </div>
