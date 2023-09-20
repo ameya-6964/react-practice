@@ -16,10 +16,15 @@ import ReactDOM from "react-dom/client";
 
 //* For Attributes Always Use Camel Case
 
-const jsxHeadind = <h1 className="heading">Hello World From JSX 🚀</h1>;
+const jsxHeading = <h1 className="heading">Hello World From JSX 🚀</h1>; //Single Line JSX
+
+//MultiLine JSX Wrap Around () Paranthesis
+const multiLineJsxHeading = (
+  <h1 className="heading">Hello World From JSX MultiLineJSX 🚀</h1>
+);
 
 //! JSX is Transpiled Before It Reaches The JS - BABEL
 //! JSX => React.createElement => JS Object => HTML Element
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(jsxHeadind);
+root.render(multiLineJsxHeading);
