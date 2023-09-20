@@ -36,7 +36,18 @@ const Header = () => {
 const RestaurantCard = () => {
   return (
     <div className="res-card">
-      <h3>KFC</h3>
+      <img
+        src="https://b.zmtcdn.com/data/pictures/chains/7/37327/83e71b55d4a73c3f0e1a5a353f90eb13_o2_featured_v2.jpg"
+        alt="KFC Logo"
+      />
+      <div className="name-price">
+        <h3>KFC</h3>
+        <h4 className="rating">3.3⭐</h4>
+      </div>
+      <div className="food-type-price">
+        <h4>Burger | Fries | Chicken </h4>
+        <h4>400 INR</h4>
+      </div>
     </div>
   );
 };

@@ -41,7 +41,41 @@
   border: 1px solid black;
   margin: 1rem;
   text-align: center;
+  padding: 1rem;
+  border-radius: 30px;
 }
 .res-card h3 {
   margin-top: 10px;
+  text-align: left;
+}
+
+.res-card img {
+  height: 210px;
+  width: 260px;
+  object-fit: cover;
+  margin-top: 1rem;
+}
+
+.rating {
+  text-align: right;
+}
+
+.name-price {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rating {
+  color: white;
+  background-color: #267e3e;
+  border-radius: 20px;
+  text-align: center;
+  width: 50px;
+  margin-top: 0.5rem;
+}
+
+.food-type-price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
