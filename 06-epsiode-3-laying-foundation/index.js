@@ -14,6 +14,7 @@ import ReactDOM from "react-dom/client";
 
 //! After JSX
 const jsxHeadind = <h1>Hello World From JSX 🚀</h1>;
-
+//! JSX is Transpiled Before It Reaches The JS - BABEL
+//! JSX => React.createElement => JS Object => HTML Element
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(jsxHeadind); //! This Method Is Basically converting Object into HTML Element Which Browser Understand
+root.render(jsxHeadind);
