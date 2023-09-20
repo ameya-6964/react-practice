@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement(
+//! Before JSX
+c; /* onst parent = React.createElement(
   "div",
   { id: "parent" },
   React.createElement(
@@ -9,6 +10,10 @@ const parent = React.createElement(
     { id: "children" },
     React.createElement("h1", {}, "Hello World From React.createElement")
   )
-);
+); */
+
+//! After JSX
+const jsxHeadind = <h1>Hello World From JSX 🚀</h1>;
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent); //! This Method Is Basically converting Object into HTML Element Which Browser Understand
+root.render(jsxHeadind); //! This Method Is Basically converting Object into HTML Element Which Browser Understand
