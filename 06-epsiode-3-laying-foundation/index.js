@@ -20,11 +20,31 @@ const jsxHeading = <h1 className="heading">Hello World From JSX 🚀</h1>; //Sin
 
 //MultiLine JSX Wrap Around () Paranthesis
 const multiLineJsxHeading = (
-  <h1 className="heading">Hello World From JSX MultiLineJSX 🚀</h1>
+  <div>
+    <h1 className="heading">Hello World From JSX MultiLineJSX 🚀</h1>
+  </div>
 );
 
 //! JSX is Transpiled Before It Reaches The JS - BABEL
 //! JSX => React.createElement => JS Object => HTML Element
 
+/* const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(multiLineJsxHeading); */
+
+//? React Components
+//! 1) Class Based Components - (Old Way Of Writing Code)
+//! 2) Function Based Components - (New Way Of Writing React Code)
+
+// * React Functional Component => It Is Judt Normal JavaScript Function
+
+const HeadingComponent = () => {
+  return (
+    <>
+      <h1> Hello World</h1>
+      <p> Hello World I Am From Functional Component</p>
+    </>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(multiLineJsxHeading);
+root.render(<HeadingComponent />);
