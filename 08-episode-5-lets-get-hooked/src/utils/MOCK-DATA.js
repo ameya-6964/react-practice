@@ -771,7 +771,7 @@ export const resObj = [
     data: {
       type: "F",
       id: "65797",
-      name: "Leon's - Burgers & Wings (Leon Grill)",
+      name: "Leon's - Burgers",
       uuid: "b5747bab-748b-4f2d-8856-25cd9a49efb3",
       city: "1",
       area: "Koramangala",
