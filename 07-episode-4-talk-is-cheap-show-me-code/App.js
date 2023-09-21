@@ -1,64 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./Components/Header";
+import Body from "./Components/Body";
 import "./App.css";
 
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://i.pinimg.com/originals/72/c1/b2/72c1b24f3e90d7766b0e5ad03b5d8145.jpg"
-          alt="Food Logo"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCard = (props) => {
-  const { resData } = props;
-  const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } =
-    resData?.data;
-  return (
-    <div className="res-card">
-      <img
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-        alt="KFC Logo"
-      />
-      <div className="name-price">
-        <h3>{name}</h3>
-        <h4 className="rating">{avgRating}⭐</h4>
-      </div>
-      <div className="food-type-price">
-        <h4>{cuisines.join(", ")}</h4>
-        <h4>{costForTwo / 100} INR</h4>
-      </div>
-    </div>
-  );
-};
-
-const resObj = [
+export const resObj = [
   {
     type: "restaurant",
     data: {
@@ -1943,15 +1889,11 @@ const resObj = [
   },
 ];
 
-const Body = () => {
+const AppLayout = () => {
   return (
-    <div className="body">
-      {/* <div className="search">Search</div> */}
-      <div className="res-container">
-        {resObj.map((restaurant) => (
-          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
-        ))}
-      </div>
+    <div className="app">
+      <Header />
+      <Body />
     </div>
   );
 };
