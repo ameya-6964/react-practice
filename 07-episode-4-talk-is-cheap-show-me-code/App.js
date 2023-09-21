@@ -1949,7 +1949,7 @@ const Body = () => {
       {/* <div className="search">Search</div> */}
       <div className="res-container">
         {resObj.map((restaurant) => (
-          <RestaurantCard resData={restaurant} />
+          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
         ))}
       </div>
     </div>
