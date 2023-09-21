@@ -47,6 +47,8 @@
 }
 .res-card:hover {
   border: 1px solid black;
+  box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
+    25px 0 20px -20px rgba(0, 0, 0, 0.45);
 }
 .res-card h3 {
   margin-top: 10px;
