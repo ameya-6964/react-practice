@@ -1,6 +1,6 @@
 import React from "react";
 import RestaurantCard from "./RestaurantCard";
-import { resObj } from "../App";
+import { resObj } from "../src/utils/MOCK-DATA";
 
 const Body = () => {
   return (

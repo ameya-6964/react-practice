@@ -1,4 +1,5 @@
 import React from "react";
+import { CDN_URL } from "../src/utils/constants";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -6,13 +7,7 @@ const RestaurantCard = (props) => {
     resData?.data;
   return (
     <div className="res-card">
-      <img
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-        alt="KFC Logo"
-      />
+      <img src={CDN_URL + cloudinaryImageId} alt="KFC Logo" />
       <div className="name-price">
         <h3>{name}</h3>
         <h4 className="rating">{avgRating}⭐</h4>
