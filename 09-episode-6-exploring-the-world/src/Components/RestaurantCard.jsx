@@ -4,7 +4,7 @@ import { CDN_URL } from "../utils/constants";
 const RestaurantCard = (props) => {
   const { resData } = props;
   const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } =
-    resData?.data;
+    resData?.info;
   return (
     <div className="res-card">
       <img src={CDN_URL + cloudinaryImageId} alt="KFC Logo" />
