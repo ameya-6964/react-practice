@@ -6,7 +6,7 @@ import searchIcon from "../utils/search.svg";
 const Body = () => {
   // Local State Variable - Super powerful variable
   const [listOfRestaurants, setListOfRestraunt] = useState([]);
-  // const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
 
@@ -30,9 +30,13 @@ const Body = () => {
         const resData =
           cardObj.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setListOfRestraunt(resData);
-        //setFilteredRestaurant(resData);
+        setFilteredRestaurant(resData);
       }
     }
+  };
+
+  const resetRes = () => {
+    setFilteredRestaurant(listOfRestaurants);
   };
 
   return listOfRestaurants.length === 0 ? (
@@ -40,6 +44,7 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        {/* //! Filtering Restaurant Based On Name */}
         <div className="search">
           <input
             type="text"
@@ -49,7 +54,6 @@ const Body = () => {
               setSearchText(e.target.value);
             }}
           />
-          {/* //! Filtering Restaurant Based On Name */}
           <button>
             <img
               src={searchIcon}
@@ -62,11 +66,12 @@ const Body = () => {
                       .includes(searchText.toLowerCase()),
                   setSearchText("")
                 );
-                setListOfRestraunt(filteredRestaurant);
+                setFilteredRestaurant(filteredRestaurant);
               }}
             />
           </button>
         </div>
+        {/* //! Filter Restaurant On Basis Of Rating */}
         <button
           className="filter-btn"
           onClick={() => {
@@ -74,14 +79,22 @@ const Body = () => {
               (res) => res.info.avgRating > 4.2
             );
             console.log(filteredList);
-            setListOfRestraunt(filteredList);
+            setFilteredRestaurant(filteredList);
           }}
         >
           Top Rated Restaurants
         </button>
+        <button
+          className="filter-btn"
+          onClick={() => {
+            resetRes();
+          }}
+        >
+          All Restaurants
+        </button>
       </div>
       <div className="res-container">
-        {listOfRestaurants.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
