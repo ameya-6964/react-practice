@@ -35,8 +35,17 @@ const Body = () => {
     }
   };
 
-  const resetRes = () => {
+  //! Function To Display All The Restaurants Again
+  const resetRestarants = () => {
     setFilteredRestaurant(listOfRestaurants);
+  };
+  //! Function To Display All The Restaurants Again
+  const searchByName = () => {
+    const filteredList = listOfRestaurants.filter(
+      (res) => res.info.avgRating > 4.2
+    );
+    console.log(filteredList);
+    setFilteredRestaurant(filteredList);
   };
 
   return listOfRestaurants.length === 0 ? (
@@ -75,11 +84,7 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.2
-            );
-            console.log(filteredList);
-            setFilteredRestaurant(filteredList);
+            searchByName();
           }}
         >
           Top Rated Restaurants
@@ -87,7 +92,7 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            resetRes();
+            resetRestarants();
           }}
         >
           All Restaurants
