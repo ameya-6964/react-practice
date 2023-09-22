@@ -53,11 +53,9 @@ const Body = () => {
               // Filter the restraunt cards and update the UI
               // searchText
               console.log(searchText);
-
               const filteredRestaurant = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
-
               setFilteredRestaurant(filteredRestaurant);
             }}
           >
@@ -71,7 +69,6 @@ const Body = () => {
               (res) => res.info.avgRating >= 4.5
             );
             setFilteredRestaurant(filteredList);
-            console.log(filteredList);
           }}
         >
           Top Rated Restaurants
