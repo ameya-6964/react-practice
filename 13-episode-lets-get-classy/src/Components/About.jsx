@@ -6,17 +6,16 @@ import "../../App.css";
 class About extends Component {
   constructor(props) {
     super(props);
-    console.log("Parent Constructor Called");
+    //console.log("Parent Constructor Called");
   }
   componentDidMount() {
-    console.log("Parent ComponentDidMount Called");
+    //console.log("Parent ComponentDidMount Called");
   }
   render() {
-    console.log("Parent Component Render ");
+    // console.log("Parent Component Render ");
     return (
       <div className="card-container">
         <UserClass name={"First"} location={"Airoli"} contact={"7715006964"} />
-        <UserClass name={"Second"} location={"Airoli"} contact={"123456789"} />
       </div>
     );
   }
