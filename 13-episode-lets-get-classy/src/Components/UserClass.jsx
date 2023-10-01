@@ -13,10 +13,21 @@ class UserClass extends React.Component {
       count: 0,
       count2: 10,
     };
+    console.log("Constructor Called From Child");
+  }
+
+  //! Use For API Calls Similar as useEffect
+  componentDidMount() {
+    console.log("ComponentDidMount Called From Child");
+  }
+
+  componentDidUpdate() {
+    console.log("componentDidUpdate Called From Child");
   }
 
   //!  Only Diffrence Between Class Based And Fumctional Component
   render() {
+    console.log("Rendered Called From Child");
     const { name, location, contact } = this.props;
     const { count, count2 } = this.state;
 
