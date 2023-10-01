@@ -15,7 +15,7 @@ class About extends Component {
     // console.log("Parent Component Render ");
     return (
       <div className="card-container">
-        <UserClass name={"First"} location={"Airoli"} contact={"7715006964"} />
+        <User name={"First"} location={"Airoli"} contact={"7715006964"} />
       </div>
     );
   }
