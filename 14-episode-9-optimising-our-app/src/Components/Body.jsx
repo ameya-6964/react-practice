@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import searchIcon from "../utils/search.svg";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   // Local State Variable - Super powerful variable
@@ -48,6 +49,13 @@ const Body = () => {
     console.log(filteredList);
     setFilteredRestaurant(filteredList);
   };
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) {
+    return (
+      <h1> Looks Like You Are Offline Please Check Your Internet Connection</h1>
+    );
+  }
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
