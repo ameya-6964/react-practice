@@ -19,6 +19,7 @@ class UserClass extends React.Component {
   render() {
     const { name, location, contact } = this.props;
     const { count, count2 } = this.state;
+
     return (
       <div className="user-container">
         <h1> Name: {name}</h1>
@@ -26,8 +27,43 @@ class UserClass extends React.Component {
         <h3> Contact: {contact}</h3>
         <h3> Count1 : {count}</h3>
         <h3> Count2 : {count2}</h3>
-        <button>+</button>
-        <button>-</button>
+        <button
+          onClick={() => {
+            this.setState({
+              count: this.state.count + 1,
+            });
+          }}
+        >
+          +
+        </button>
+        <button
+          onClick={() => {
+            this.setState({
+              count: this.state.count2 - 1,
+            });
+          }}
+        >
+          -
+        </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button
+          onClick={() => {
+            this.setState({
+              count2: this.state.count2 + 5,
+            });
+          }}
+        >
+          +
+        </button>
+        <button
+          onClick={() => {
+            this.setState({
+              count2: this.state.count2 - 5,
+            });
+          }}
+        >
+          -
+        </button>
       </div>
     );
   }
