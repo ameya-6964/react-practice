@@ -11,33 +11,31 @@ class UserClass extends React.Component {
 
     this.state = {
       count: 0,
-      count2: 10,
     };
-    console.log("Constructor Called From Child");
+    console.log(this.props.name + " Child Constructor Called");
   }
 
   //! Use For API Calls Similar as useEffect
   componentDidMount() {
-    console.log("ComponentDidMount Called From Child");
+    console.log(this.props.name + " ComponentDidMount Called");
   }
 
   componentDidUpdate() {
-    console.log("componentDidUpdate Called From Child");
+    console.log(this.props.name + " componentDidUpdate Called ");
   }
 
   //!  Only Diffrence Between Class Based And Fumctional Component
   render() {
-    console.log("Rendered Called From Child");
     const { name, location, contact } = this.props;
-    const { count, count2 } = this.state;
+    const { count } = this.state;
+    console.log(name + " Rendered Called");
 
     return (
       <div className="user-container">
         <h1> Name: {name}</h1>
         <h2> Location: {location}</h2>
         <h3> Contact: {contact}</h3>
-        <h3> Count1 : {count}</h3>
-        <h3> Count2 : {count2}</h3>
+        <h3> Count : {count}</h3>
         <button
           onClick={() => {
             this.setState({
@@ -50,26 +48,7 @@ class UserClass extends React.Component {
         <button
           onClick={() => {
             this.setState({
-              count: this.state.count2 - 1,
-            });
-          }}
-        >
-          -
-        </button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button
-          onClick={() => {
-            this.setState({
-              count2: this.state.count2 + 5,
-            });
-          }}
-        >
-          +
-        </button>
-        <button
-          onClick={() => {
-            this.setState({
-              count2: this.state.count2 - 5,
+              count: this.state.count - 1,
             });
           }}
         >

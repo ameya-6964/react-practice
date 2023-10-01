@@ -6,29 +6,33 @@ import "../../App.css";
 class About extends Component {
   constructor(props) {
     super(props);
-    console.log("Constructor Rendered From Parent");
+    console.log("Parent Constructor Called");
   }
   componentDidMount() {
-    console.log("ComponentDidMount Called From Parent");
+    console.log("Parent ComponentDidMount Called");
   }
   render() {
-    console.log("Render From Parent Component");
+    console.log("Parent Component Render ");
     return (
       <div className="card-container">
-        <User
-          name={"Ameya Function Based Component"}
-          location={"Airoli"}
-          contact={"7715006964"}
-        />
-        <UserClass
-          name={"Ameya Class Based Component"}
-          location={"Airoli"}
-          contact={"7715006964"}
-        />
+        <UserClass name={"First"} location={"Airoli"} contact={"7715006964"} />
+        <UserClass name={"Second"} location={"Airoli"} contact={"123456789"} />
       </div>
     );
   }
 }
+
+/*   Component Lifecyle Log
+* Parent Constructor Called
+* Parent Component Render
+? First Child Constructor Called
+? First Rendered Called
+! Second Child Constructor Called
+! Second Rendered Called
+? First ComponentDidMount Called
+! Second ComponentDidMount Called
+* Parent ComponentDidMount Called 
+*/
 
 /* const About = () => {
   return (
