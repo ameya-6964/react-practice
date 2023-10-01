@@ -23,6 +23,7 @@
 .nav-items > ul {
   display: flex;
   list-style-type: none;
+  padding: 0.5rem;
 }
 
 .nav-items > ul > li {
@@ -35,6 +36,8 @@
 
 .search {
   padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .res-card {
