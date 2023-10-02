@@ -2,30 +2,38 @@ import React, { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
+/* .header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+} */
 const Header = () => {
   const [btnName, setBtnName] = useState(false);
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={LOGO_URL} alt="Food Logo" />
+    <div className="flex justify-between border items-center ">
+      <div className="flex align-middle">
+        <img className="w-[150]" src={LOGO_URL} alt="Food Logo" />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
-          <li>
-            <Link to="/">Home </Link>
-          </li>
-          <li>
-            <Link to="/about">About Us</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact Us</Link>
-          </li>
-          <li>Cart</li>
+      <div>
+        <ul className="flex list-none  ">
+          <div className="flex w-[800] justify-evenly font-bold mt-1 cursor-not-allowed ">
+            <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
+            <li className=" hover:text-gray-600 transition-all">
+              <Link to="/">Home </Link>
+            </li>
+            <li className=" hover:text-gray-600 transition-all">
+              <Link to="/about">About Us</Link>
+            </li>
+            <li className=" hover:text-gray-600 transition-all">
+              <Link to="/contact">Contact Us</Link>
+            </li>
+            <li className=" hover:text-gray-600 transition-all cursor-pointer">
+              Cart
+            </li>
+          </div>
           <button
-            className="login"
+            className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded"
             onClick={() => {
               setBtnName(!btnName);
             }}

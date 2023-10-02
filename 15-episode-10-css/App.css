@@ -62,13 +62,6 @@
   text-align: left;
 }
 
-.res-card img {
-  height: 210px;
-  width: 260px;
-  object-fit: cover;
-  margin-top: 1rem;
-  cursor: pointer;
-}
 
 .name-price {
   display: flex;
