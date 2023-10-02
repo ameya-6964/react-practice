@@ -20,7 +20,6 @@ const RestaurantMenu = () => {
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-
   return (
     <>
       <div className="text-center">
@@ -31,7 +30,7 @@ const RestaurantMenu = () => {
         {/* Categories Accordian */}
         {categories.map((category) => (
           <RestaurantCategory
-            key={category?.card?.card?.itemCards?.info?.id}
+            key={category?.card?.card?.title}
             data={category?.card?.card}
           />
         ))}

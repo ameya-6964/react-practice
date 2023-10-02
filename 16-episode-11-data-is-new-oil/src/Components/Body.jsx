@@ -32,7 +32,6 @@ const Body = () => {
           cardObj.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setListOfRestraunt(resData);
         setFilteredRestaurant(resData);
-        console.log(resData);
       }
     }
   };

@@ -3,12 +3,11 @@ import MenuList from "./MenuList";
 
 const RestaurantCategory = ({ data }) => {
   const [showItems, setShowItems] = useState(false);
+  const [svg, setSvg] = useState(false);
   const handleClick = () => {
     setShowItems(!showItems);
     setSvg(!svg);
   };
-
-  const [svg, setSvg] = useState(false);
   return (
     <div>
       <div className="w-6/12 mx-auto my-5 bg-gray-50 shadow-lg p-4 cursor-pointer">
@@ -51,7 +50,7 @@ const RestaurantCategory = ({ data }) => {
             showItems && "opacity-100"
           }`}
         >
-          {showItems && <MenuList items={data?.itemCards} />}
+          {showItems && <MenuList items={data.itemCards} />}
         </div>
       </div>
     </div>
