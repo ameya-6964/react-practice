@@ -5,15 +5,7 @@ const RestaurantCard = (props) => {
   const { resData } = props;
   const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } =
     resData?.info;
-  /*  .rating {
-      color: white;
-      background-color: #267e3e;
-      border-radius: 20px;
-      text-align: center;
-      width: 50px;
-      margin-top: 0.5rem;
-      margin-left: 20px;
-    } */
+
   return (
     <div className="w-[300px] h-auto m-[1rem] p-[1rem] bg-slate-100 rounded-2xl hover:bg-slate-200">
       <img
@@ -33,5 +25,18 @@ const RestaurantCard = (props) => {
       </div>
     </div>
   );
+};
+
+export const withVegLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-green-700 text-white px-3 mt-2  ml-8 h-[30px] text-center rounded-xl">
+          Veg 🟢
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 export default RestaurantCard;
