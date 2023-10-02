@@ -6,3 +6,6 @@ export const LOGO_URL =
 
 export const MENU_API =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.151546&lng=72.999448&restaurantId=";
+
+export const PLACEHOLDER_IMAGE =
+  "https://vatica.ca/wp-content/uploads/2019/08/Coming-Soon-Food-Image.jpg";
