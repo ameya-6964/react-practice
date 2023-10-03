@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
+//import useOnlineStatus from "../utils/useOnlineStatus";
 /* .header {
   display: flex;
   justify-content: space-between;
@@ -9,7 +9,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 } */
 const Header = () => {
   const [btnName, setBtnName] = useState(false);
-  const onlineStatus = useOnlineStatus();
+  // const onlineStatus = useOnlineStatus();
   return (
     <div className="flex justify-between border items-center ">
       <div className="flex align-middle">
@@ -18,9 +18,9 @@ const Header = () => {
       <div>
         <ul className="flex list-none  ">
           <div className="flex w-[800] justify-evenly font-bold mt-1 ">
-            <li className=" cursor-not-allowed ">
+            {/*  <li className=" cursor-not-allowed ">
               Online Status: {onlineStatus ? "🟢" : "🔴"}
-            </li>
+            </li> */}
             <li className=" hover:text-gray-600 transition-all">
               <Link to="/">Home </Link>
             </li>

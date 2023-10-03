@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import MenuList from "./MenuList";
 
-const RestaurantCategory = ({ data }) => {
-  const [showItems, setShowItems] = useState(false);
-  const [svg, setSvg] = useState(false);
+const RestaurantCategory = ({ data, showItems, svg, setShowIndex }) => {
   const handleClick = () => {
-    setShowItems(!showItems);
-    setSvg(!svg);
+    setShowIndex();
   };
   return (
     <div>
-      <div className="w-6/12 mx-auto my-5 bg-gray-50 shadow-lg p-4 cursor-pointer">
-        <div className="flex justify-between" onClick={handleClick}>
+      <div
+        className="w-6/12 mx-auto my-5 bg-gray-50 shadow-lg p-4 cursor-pointer"
+        onClick={handleClick}
+      >
+        <div className="flex justify-between">
           <span className="font-bold text-lg">
             {data.title} ({data?.itemCards?.length})
           </span>
@@ -46,7 +46,7 @@ const RestaurantCategory = ({ data }) => {
           </span>
         </div>
         <div
-          className={`opacity-0 transition-opacity duration-500 ease-in-out ${
+          className={`opacity-0 transition-opacity duration-1000 ease-in-out ${
             showItems && "opacity-100"
           }`}
         >
