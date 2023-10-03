@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import MenuList from "./MenuList";
 
-const RestaurantCategory = ({ data, showItems, svg, setShowIndex }) => {
-  const handleClick = () => {
-    setShowIndex();
+const RestaurantCategory = ({ data, showItems, svg, onClick }) => {
+  const setShowIndex = (index) => {
+    setShowIndex((prev) => (prev === index ? null : index));
   };
   return (
     <div>
       <div
         className="w-6/12 mx-auto my-5 bg-gray-50 shadow-lg p-4 cursor-pointer"
-        onClick={handleClick}
+        onClick={onClick}
       >
         <div className="flex justify-between">
           <span className="font-bold text-lg">

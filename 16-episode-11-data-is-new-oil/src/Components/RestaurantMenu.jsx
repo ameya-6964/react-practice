@@ -8,7 +8,13 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
   const [showIndex, setShowIndex] = useState(null);
-
+  const setIndex = (index) => {
+    if (showIndex === index) {
+      setShowIndex(null);
+    } else {
+      setShowIndex(index);
+    }
+  };
   if (resInfo === null) return <Shimmer />;
 
   const { name, cuisines, costForTwoMessage } =
@@ -36,7 +42,7 @@ const RestaurantMenu = () => {
             data={category?.card?.card}
             showItems={index === showIndex ? true : false}
             svg={index === showIndex ? true : false}
-            setShowIndex={() => setShowIndex(index)}
+            onClick={() => setIndex(index)}
           />
         ))}
       </div>
