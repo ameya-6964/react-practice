@@ -7,9 +7,9 @@ const RestaurantCard = (props) => {
     resData?.info;
 
   return (
-    <div className="w-[300px] h-auto m-[1rem] p-[1rem] bg-slate-100 rounded-2xl hover:bg-slate-200">
+    <div className="w-[350px] h-[auto]  m-[1rem] p-[1rem] bg-slate-100 rounded-2xl hover:bg-slate-200">
       <img
-        className="h-[210px] w-[260px] object-cover mt-1 cursor-pointer "
+        className="h-[210px] w-[300px] object-cover mt-1 cursor-pointer mr-auto ml-auto "
         src={CDN_URL + cloudinaryImageId}
         alt="KFC Logo"
       />
