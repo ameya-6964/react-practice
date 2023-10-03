@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { LOGO_URL } from "../utils/constants";
+import logo from "/public/logo.png";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
 
@@ -7,23 +7,23 @@ const Header = () => {
   const [btnName, setBtnName] = useState(false);
   const { loggedInUser } = useContext(UserContext);
   return (
-    <div className="flex justify-between border items-center ">
+    <div className="flex justify-between  items-center bg-gradient-to-r from-gray-700 to-black  text-white ">
       <div className="flex align-middle">
-        <img className="w-[150]" src={LOGO_URL} alt="Food Logo" />
+        <img className="w-[150] bg-image-none" src={logo} alt="Food Logo" />
       </div>
       <div>
         <ul className="flex list-none  ">
           <div className="flex w-[800] justify-evenly font-bold mt-1 ">
-            <li className=" hover:text-gray-600 transition-all">
+            <li className=" hover:text-yellow-400 transition-all">
               <Link to="/">Home </Link>
             </li>
-            <li className=" hover:text-gray-600 transition-all">
+            <li className="  hover:text-yellow-400 transition-all">
               <Link to="/about">About Us</Link>
             </li>
-            <li className=" hover:text-gray-600 transition-all">
+            <li className="  hover:text-yellow-400 transition-all">
               <Link to="/contact">Contact Us</Link>
             </li>
-            <li className=" hover:text-gray-600 transition-all cursor-pointer">
+            <li className="  hover:text-yellow-400 transition-all cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -41,9 +41,9 @@ const Header = () => {
             </li>
           </div>
           <button
-            className="bg-transparent hover:bg-blue-500 
-            text-blue-700 font-semibold hover:text-white py-1 px-4
-            border border-blue-500 hover:border-transparent rounded mr-4"
+            className="bg-transparent bg-red-700 hover:bg-red-800
+            text-white font-semibold hover:text-white py-1 px-4
+            border border-orange-300 hover:border-transparent rounded mr-4"
             onClick={() => {
               setBtnName(!btnName);
             }}

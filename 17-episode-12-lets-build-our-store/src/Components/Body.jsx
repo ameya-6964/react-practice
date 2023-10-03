@@ -59,10 +59,10 @@ const Body = () => {
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="flex justify-evenly mt-[0.5rem] flex-wrap">
+    <div className="bg-gradient-to-r from-gray-700 to-black">
+      <div className="flex justify-evenly pt-[0.5rem] flex-wrap ">
         {/* //! Filtering Restaurant Based On Name */}
-        <div className="p-[10px] flex flex-wrap">
+        <div className="p-[10px] flex flex-wrap ">
           <input
             type="text"
             className="border-[1px] border-solid border-black w-[400px]"
@@ -90,7 +90,7 @@ const Body = () => {
         </div>
         {/* //! Filter Restaurant On Basis Of Rating */}
         <button
-          className=" bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded"
+          className=" bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
           onClick={() => {
             searchByName();
           }}
@@ -98,7 +98,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
         <button
-          className=" bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded"
+          className="  bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
           onClick={() => {
             resetRestarants();
           }}
@@ -106,7 +106,7 @@ const Body = () => {
           All Restaurants
         </button>
       </div>
-      <div className="flex flex-wrap justify-center ">
+      <div className="flex flex-wrap justify-center   ">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}

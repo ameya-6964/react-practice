@@ -14,21 +14,18 @@ const Shimmer = () => {
       border-radius: 50px;
       background-color: #f0f0f0;
     } */
-    <div className="flex flex-wrap p-[2rem] justify-center">
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
-      <div className="w-[300px] h-[350px] m-[1rem] rounded-xl bg-[#f0f0f0]"></div>
+    <div className="flex flex-wrap p-[2rem] justify-center bg-gradient-to-r from-gray-700 to-black">
+      <div className="w-[350px] h-[380px]  m-[1rem] mt-[1.5rem] p-[1rem] rounded-3xl bg-radial bg-gradient-to-tr from-red-500 to-red-900"></div>
+      <div className="w-[350px] h-[380px]  m-[1rem] mt-[1.5rem] p-[1rem] rounded-3xl bg-radial bg-gradient-to-tr from-red-500 to-red-900"></div>
+      <div className="w-[350px] h-[380px]  m-[1rem] mt-[1.5rem] p-[1rem] rounded-3xl bg-radial bg-gradient-to-tr from-red-500 to-red-900"></div>
+      <div className="w-[350px] h-[380px]  m-[1rem] mt-[1.5rem] p-[1rem] rounded-3xl bg-radial bg-gradient-to-tr from-red-500 to-red-900"></div>
+      <div className="w-[350px] h-[380px]  m-[1rem] mt-[1.5rem] p-[1rem] rounded-3xl bg-radial bg-gradient-to-tr from-red-500 to-red-900"></div>
+      <div className="w-[350px] h-[380px]  m-[1rem] mt-[1.5rem] p-[1rem] rounded-3xl bg-radial bg-gradient-to-tr from-red-500 to-red-900"></div>
+      <div className="w-[350px] h-[380px]  m-[1rem] mt-[1.5rem] p-[1rem] rounded-3xl bg-radial bg-gradient-to-tr from-red-500 to-red-900"></div>
+      <div className="w-[350px] h-[380px]  m-[1rem] mt-[1.5rem] p-[1rem] rounded-3xl bg-radial bg-gradient-to-tr from-red-500 to-red-900"></div>
+      <div className="w-[350px] h-[380px]  m-[1rem] mt-[1.5rem] p-[1rem] rounded-3xl bg-radial bg-gradient-to-tr from-red-500 to-red-900"></div>
+      <div className="w-[350px] h-[380px]  m-[1rem] mt-[1.5rem] p-[1rem] rounded-3xl bg-radial bg-gradient-to-tr from-red-500 to-red-900"></div>
+      <div className="w-[350px] h-[380px]  m-[1rem] mt-[1.5rem] p-[1rem] rounded-3xl bg-radial bg-gradient-to-tr from-red-500 to-red-900"></div>
     </div>
   );
 };
