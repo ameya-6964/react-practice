@@ -8,7 +8,7 @@ const RestaurantCategory = ({ data, showItems, svg, onClick }) => {
   return (
     <div>
       <div
-        className="w-6/12 mx-auto my-5 bg-gray-50 shadow-lg p-4 cursor-pointer"
+        className="w-6/12 mx-auto my-5 bg-gray-50 shadow-lg p-4 cursor-pointer "
         onClick={onClick}
       >
         <div className="flex justify-between">

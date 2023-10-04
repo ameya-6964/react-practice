@@ -8,11 +8,11 @@ const RestaurantCard = (props) => {
 
   return (
     <div
-      className="w-[350px] h-[auto]  m-[1rem] mt-[1.5rem] p-[1rem] bg-radial bg-gradient-to-tr from-red-500 to-red-900
-       hover:from-red-400 hover:to-red-700 text-white rounded-3xl "
+      className="w-[350px] h-[auto]  m-[1rem] mt-[1.5rem] p-[1rem] bg-radial bg-gradient-to-b from-[#ED213A] to-[#93291E]
+        text-white rounded-3xl "
     >
       <img
-        className="h-[210px] w-[300px] object-cover mt-1 cursor-pointer mr-auto ml-auto "
+        className="h-[210px] w-[300px] object-cover mt-1 cursor-pointer mr-auto ml-auto rounded-lg "
         src={CDN_URL + cloudinaryImageId}
         alt="KFC Logo"
       />
