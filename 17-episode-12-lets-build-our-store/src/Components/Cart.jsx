@@ -19,15 +19,21 @@ const Cart = () => {
         >
           Clear Cart Items 🗑️
         </button>
-        {cartItems.length === 0 && (
+        {cartItems.length === 0 ? (
           <div className="flex flex-col justify-center align-middle h-[200px]">
-            <h1 className="mt-auto mb-auto text-xl ">Your Cart Is Empty 😿</h1>
-            <h1 className="mt-auto mb-auto text-xl ">
+            <h1 className="mt-auto mb-auto text-xl">Your Cart Is Empty 😿</h1>
+            <h1 className="mt-auto mb-auto text-xl">
               Add Items To Your Cart 😀
             </h1>
           </div>
+        ) : (
+          <>
+            <MenuList items={cartItems} />
+            <button className="bg-green-700 hover:bg-green-800 text-white font-bold py-1 px-2 rounded">
+              Proceed To Payment
+            </button>
+          </>
         )}
-        <MenuList items={cartItems} />
       </div>
     </div>
   );
