@@ -9,12 +9,12 @@ const Header = () => {
   const { loggedInUser } = useContext(UserContext);
   const cartItems = useSelector((store) => store.cart.items);
   return (
-    <div className="flex justify-between  items-center bg-gradient-to-r from-gray-700 to-black  text-white ">
-      <div className="flex align-middle">
-        <img className="w-[150] bg-image-none" src={logo} alt="Food Logo" />
+    <div className="flex flex-col md:flex-row justify-between items-center bg-gradient-to-r from-gray-700 to-black text-white ">
+      <div className="flex align-middle px-4">
+        <img className="w-[150px] bg-none sm:mr-4" src={logo} alt="Food Logo" />
       </div>
-      <div>
-        <ul className="flex list-none  ">
+      <div className="flex flex-col md:flex-row">
+        <ul className="hidden md:flex list-none justify-evenly w-full font-bold mt-4  ">
           <div className="flex w-[800] justify-evenly font-bold mt-1 ">
             <li className=" hover:text-yellow-400 transition-all">
               <Link to="/">Home </Link>
@@ -48,9 +48,7 @@ const Header = () => {
             </li>
           </div>
           <button
-            className=" bg-red-600 hover:bg-red-400
-            text-white font-semibold hover:text-white py-1 px-4
-            border border-orange-300 hover:border-transparent rounded mr-4 w-auto"
+            className=" bg-red-600 hover:bg-red-400 px-2 py-1 md:px-4 md:py-2 rounded mr-4"
             onClick={() => {
               setBtnName(!btnName);
             }}

@@ -1,8 +1,8 @@
-import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import { useParams } from "react-router-dom";
 import RestaurantCategory from "./RestaurantCategory";
 import { useState } from "react";
+import ShimmerItem from "./ShimmerItem.jsx";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -15,7 +15,7 @@ const RestaurantMenu = () => {
       setShowIndex(index);
     }
   };
-  if (resInfo === null) return <Shimmer />;
+  if (resInfo === null) return <ShimmerItem />;
 
   const { name, cuisines, costForTwoMessage } =
     resInfo?.cards[0]?.card?.card?.info;
@@ -30,21 +30,24 @@ const RestaurantMenu = () => {
     );
   return (
     <>
-      <div className="text-center ">
-        <h1 className="font-bold my-6 text-2xl">{name}</h1>
-        <p className="font-bold text-lg">
-          {cuisines.join(", ")} - Price : {costForTwoMessage}
-        </p>
-        {/* Categories Accordian */}
-        {categories.map((category, index) => (
-          <RestaurantCategory
-            key={category?.card?.card?.title}
-            data={category?.card?.card}
-            showItems={index === showIndex ? true : false}
-            svg={index === showIndex ? true : false}
-            onClick={() => setIndex(index)}
-          />
-        ))}
+      <div className="bg-gradient-to-r from-gray-700 to-black">
+        <div className="text-center ">
+          <h1 className="font-bold text-white text-2xl">{name}</h1>
+          <p className="font-bold text-white text-lg">
+            {cuisines.join(", ")} - Price : {costForTwoMessage}
+          </p>
+          {/* Categories Accordian */}
+          {categories.map((category, index) => (
+            <RestaurantCategory
+              className="bg-gradient-to-r from-gray-700 to-black"
+              key={category?.card?.card?.title}
+              data={category?.card?.card}
+              showItems={index === showIndex ? true : false}
+              svg={index === showIndex ? true : false}
+              onClick={() => setIndex(index)}
+            />
+          ))}
+        </div>
       </div>
     </>
   );

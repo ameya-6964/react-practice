@@ -16,7 +16,7 @@ const MenuList = ({ items }) => {
       {items.map((item) => (
         <div
           key={item.card.info.id}
-          className="p-2 m-2 border-gray-200 border-b-2 text-left flex flex-col"
+          className="p-2 m-2 border-gray-200 border-b-2 text-left flex flex-col "
         >
           <div className="py-2">
             <span>{item.card.info.name}</span>
@@ -42,20 +42,20 @@ const MenuList = ({ items }) => {
           </div>
           <div>
             <button
-              className="bg-transparent bg-green-500 text-green-400 
-          hover:bg-green-600 hover:text-white font-bold py-1 px-2 border 
-          border-green-400 border-1 hover:border-transparent rounded w-[70px] relative left-[535px] bottom-[30px]"
+              className=" bg-green-500  text-white 
+          hover:bg-green-600 hover:text-white font-bold py-1 px-2 border text-center
+          border-green-400 border-1 hover:border-transparent rounded-xl w-[50px] relative left-[550px] bottom-[30px]"
               onClick={() => handleAddItem(item)}
             >
-              Add
+              +
             </button>
             <button
-              className="bg-transparent bg-white text-red-600 
-          hover:bg-red-600 hover:text-white font-bold py-1 px-2 border 
-          border-red-700 border-1 hover:border-transparent rounded w-[80px] relative left-[550px] bottom-[30px]"
+              className="= bg-red-600 text-white 
+          hover:bg-red-700 hover:text-white font-bold py-1 px-2 border text-center
+          border-red-700 border-1 hover:border-transparent rounded-xl w-[50px] relative left-[570px] bottom-[29px]"
               onClick={() => handleRemoveItem(item)}
             >
-              Remove
+              -
             </button>
           </div>
         </div>

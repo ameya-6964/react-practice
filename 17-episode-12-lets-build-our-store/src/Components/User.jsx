@@ -13,13 +13,23 @@ const User = () => {
     setData(json);
   }
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg mt-5 ml-auto mr-auto">
-      <img width={400} height={400} src={data.avatar_url} />
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">
-          <h1> Name: {data.name}</h1>
-          <h2> Location: {data.location}</h2>
-          <h3> Contact: {data.html_url}</h3>
+    <div className="min-h-screen bg-gradient-to-r from-gray-700 to-black text-white ">
+      <div
+        className="max-w-sm rounded-xl overflow-hidden shadow-lg  ml-auto mr-auto border border-red-950
+        "
+      >
+        <img width={400} height={400} src={data.avatar_url} />
+        <div className="px-6 py-6">
+          <div className="font-bold text-xl mb-2">
+            <h1> Name: {data.name}</h1>
+            <h2> Location: {data.location}</h2>
+            <h3> Contact: {data.html_url}</h3>
+            <button className="bg-green-700 hover:bg-green-800 text-white mt-5 font-bold py-3 px-8 rounded text-center ml-[7rem]">
+              <a href="https://github.com/ameya-6964" target="_blank">
+                Visit{" "}
+              </a>
+            </button>
+          </div>
         </div>
       </div>
     </div>

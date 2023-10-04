@@ -13,11 +13,7 @@ class About extends Component {
   }
   render() {
     // console.log("Parent Component Render ");
-    return (
-      <div className="card-container">
-        <User name={"First"} location={"Airoli"} contact={"7715006964"} />
-      </div>
-    );
+    return <User name={"First"} location={"Airoli"} contact={"7715006964"} />;
   }
 }
 

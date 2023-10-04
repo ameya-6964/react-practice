@@ -8,7 +8,7 @@ const RestaurantCard = (props) => {
 
   return (
     <div
-      className="w-[350px] h-[auto]  m-[1rem] mt-[1.5rem] p-[1rem] bg-radial bg-gradient-to-b from-[#ED213A] to-[#93291E]
+      className="w-[350px] h-[auto]  m-[1rem] mt-[1.5rem] p-[1rem] bg-radial bg-gradient-to-b from-gray-800 to-gray-700
         text-white rounded-3xl "
     >
       <img
