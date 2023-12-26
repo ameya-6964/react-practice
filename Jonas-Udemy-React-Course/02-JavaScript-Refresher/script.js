@@ -145,7 +145,7 @@ function getBook(id) {
 
 //! Destructuring
 //! If Destructuring Object Always Check key name
-const book = getBook(2);
+const book = getBook(1);
 
 const { title, author, pages, publicationDate, hasMovieAdaptation, genres } =
   book;
@@ -154,4 +154,22 @@ const { title, author, pages, publicationDate, hasMovieAdaptation, genres } =
 // const secondaryGenre = genres[1];
 
 //! Destructuring Arrays
-const [primaryGenre, secondaryGenre] = genres;
+//const [primaryGenre, secondaryGenre] = genres;
+
+//! REST and SPREAD Operator
+//? REST OPERATOR => Left Side Of Assignment Operator => Always Should Be At End
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+
+//? SPREAD OPERATOR => right Side Of Assignment Operator => Can Be Used Anywhere But In Objects For Overriding Existing and adding new Properties It Should Be First
+
+const newGenres = ["Epic Fantasy", ...genres];
+
+const updatedBook = {
+  ...book,
+  //! Adding New Property
+  moviePublicationDate: "2023-12-12",
+  //! Overrding Existing Property
+  pages: 1210,
+};
+
+console.log(updatedBook.pages);
