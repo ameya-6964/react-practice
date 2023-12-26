@@ -52,14 +52,21 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
     return (
-      <h1> Looks Like You Are Offline Please Check Your Internet Connection</h1>
+      <div
+        className="min-h-screen bg-gradient-to-r from-gray-700 to-black 
+      text-white flex justify-between items-center flex-wrap border border-red-600"
+      >
+        <h1 className="text-[3rem] ml-auto mr-auto text-red-600">
+          Looks Like You Are Offline Please Check Your Internet Connection 📶
+        </h1>
+      </div>
     );
   }
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="bg-gradient-to-r from-gray-700 to-black">
+    <div className="min-h-screen bg-gradient-to-r from-gray-700 to-black">
       <div className="flex justify-evenly pt-[0.5rem] flex-wrap ">
         {/* //! Filtering Restaurant Based On Name */}
         <div className="p-[10px] flex flex-wrap ">

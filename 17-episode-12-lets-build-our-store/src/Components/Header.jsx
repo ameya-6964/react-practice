@@ -22,9 +22,6 @@ const Header = () => {
             <li className="  hover:text-yellow-400 transition-all">
               <Link to="/about">About Us</Link>
             </li>
-            <li className="  hover:text-yellow-400 transition-all">
-              <Link to="/contact">Contact Us</Link>
-            </li>
             <li className="  hover:text-yellow-400 transition-all cursor-pointer ">
               <Link to="/cart">
                 <svg
