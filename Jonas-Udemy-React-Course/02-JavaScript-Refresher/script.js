@@ -169,9 +169,23 @@ const updatedBook = {
   //! Adding New Property
   moviePublicationDate: "2023-12-12",
   //! Overrding Existing Property
-  pages: 1210,
+  pages: 1200,
 };
 
 //! Tempelate Literals
 
-const summary = `${title} is a Book With ${updatedBook.pages} Pages`;
+const summary = `${title} is a Book With ${
+  updatedBook.pages
+} Pages, Written By ${updatedBook.author} and ${
+  updatedBook.hasMovieAdaptation
+    ? "Has Movie Adaptation"
+    : "Does Not Have Movie Adaptation"
+}`;
+
+//! Ternary Operator
+
+const pageRange =
+  updatedBook.pages > 1000 ? `Over Thousand Pages` : `Less Then 1000`;
+pageRange;
+
+summary;
