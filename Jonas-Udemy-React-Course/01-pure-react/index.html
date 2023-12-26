@@ -35,9 +35,9 @@
 
         //! Create Element is Function To create DOM Element Using JavaScript
         const heading = React.createElement(
-          "h1",
-          null,
-          `Hello React! It's ${time}`
+          "div",
+          { id: "parent" },
+          React.createElement("h1", null, `Hello React! It's ${time}`)
         );
         return heading;
       }
