@@ -189,3 +189,12 @@ const pageRange =
 pageRange;
 
 summary;
+
+//! Arrow Functions
+
+const getYear = (str) => {
+  return str.split("-")[0];
+};
+
+console.log(publicationDate); //'1954-02-29'
+console.log(getYear(publicationDate)); //'1954'
