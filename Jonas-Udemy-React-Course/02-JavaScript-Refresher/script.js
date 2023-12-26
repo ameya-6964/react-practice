@@ -172,4 +172,6 @@ const updatedBook = {
   pages: 1210,
 };
 
-console.log(updatedBook.pages);
+//! Tempelate Literals
+
+const summary = `${title} is a Book With ${updatedBook.pages} Pages`;
