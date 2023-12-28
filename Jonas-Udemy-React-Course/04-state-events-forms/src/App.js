@@ -11,7 +11,7 @@ function App() {
   const [isOpen, setIsOpen] = useState(true);
   const handlePrevious = () => {
     if (step > 1) {
-      setStep(step - 1);
+      setStep((prev) => prev - 1);
     }
   };
   const handleNext = () => {
