@@ -6,7 +6,9 @@ const PizzaData = ({ pizza }) => {
       <div>
         <h3>{pizzaName}</h3>
         <p>{ingredients}</p>
-        <span>{price + 200} INR</span>
+        <span>
+          <b> {price}</b> ₹
+        </span>
       </div>
     </li>
   );

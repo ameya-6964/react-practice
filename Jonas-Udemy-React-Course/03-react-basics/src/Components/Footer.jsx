@@ -6,8 +6,15 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()}&nbsp;
-      {isOpen ? "We Are Currently Open" : "Sorry We Are Currently Closed"}
+      {isOpen && (
+        <div className="order">
+          <p>
+            We&apos;re Currently Open Till {closeHour}:00 PM.&nbsp;
+            <b style={{ color: "green" }}>Come Visit Us Or Order Online </b>
+          </p>
+          <button className="btn">Order</button>
+        </div>
+      )}
     </footer>
   );
 };
