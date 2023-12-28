@@ -1,15 +1,15 @@
-import { pizzaData } from "../../public/data";
-import PizzaData from "./PizzaData";
-
-const Pizza = () => {
+const PizzaData = ({ pizza }) => {
+  const { name: pizzaName, photoName, ingredients, price } = pizza;
   return (
-    <div>
-      {pizzaData.map((pizza) => (
-        <PizzaData pizza={pizza} key={pizza.name} />
-      ))}
-      {/*  <img src="../../public/pizzas/focaccia.jpg" width={100} alt="" /> */}
+    <div className="pizza">
+      <img src={`../../${photoName}`} alt={pizzaName} />
+      <div>
+        <h3>{pizzaName}</h3>
+        <p>{ingredients}</p>
+        <span>{price + 200} INR</span>
+      </div>
     </div>
   );
 };
 
-export default Pizza;
+export default PizzaData;

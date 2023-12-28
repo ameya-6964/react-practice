@@ -1,10 +1,14 @@
-import Pizza from "./Components/Pizza";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import Menu from "./Components/Menu";
 
 const App = () => {
   return (
-    <>
-      <Pizza />
-    </>
+    <div className="container">
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
   );
 };
 
