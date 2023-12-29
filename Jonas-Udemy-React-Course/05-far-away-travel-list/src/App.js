@@ -24,6 +24,13 @@ const App = () => {
     );
   };
 
+  const handleClearList = () => {
+    const confirmed = window.confirm(
+      "Are You Sure You Want To Delete All Items??"
+    );
+    if (confirmed) setItems([]);
+  };
+
   return (
     <div className="app">
       <Logo />
@@ -32,6 +39,7 @@ const App = () => {
         items={items}
         onDeleteItem={handleDeleteItem}
         onToggleItems={handleToggleItem}
+        onClearList={handleClearList}
       />
       <Stats items={items} />
     </div>
