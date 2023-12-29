@@ -1,9 +1,11 @@
-import React from "react";
+import AccordianItem from "./AccordianItem";
 
-const Accordian = () => {
+const Accordian = ({ data }) => {
   return (
-    <div>
-      <h1>TODO</h1>
+    <div className="accordion">
+      {data.map((el, i) => (
+        <AccordianItem title={el.title} text={el.text} num={i} key={el.title} />
+      ))}
     </div>
   );
 };

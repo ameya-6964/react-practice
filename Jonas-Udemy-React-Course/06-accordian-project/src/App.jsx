@@ -19,7 +19,7 @@ const faqs = [
 function App() {
   return (
     <div>
-      <Accordian />
+      <Accordian data={faqs} />
     </div>
   );
 }
