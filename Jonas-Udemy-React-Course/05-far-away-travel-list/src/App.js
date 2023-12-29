@@ -6,6 +6,8 @@ import Stats from "./Components/Stats";
 
 const App = () => {
   const [items, setItems] = useState([]);
+  console.log(items);
+
   const handleAddItems = (item) => {
     setItems((items) => [...items, item]);
   };
@@ -31,7 +33,7 @@ const App = () => {
         onDeleteItem={handleDeleteItem}
         onToggleItems={handleToggleItem}
       />
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 };
