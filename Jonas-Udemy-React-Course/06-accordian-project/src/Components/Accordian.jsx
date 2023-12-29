@@ -1,10 +1,20 @@
+import { useState } from "react";
 import AccordianItem from "./AccordianItem";
 
 const Accordian = ({ data }) => {
+  const [currOpen, setCurrOpen] = useState(null);
   return (
     <div className="accordion">
       {data.map((el, i) => (
-        <AccordianItem title={el.title} text={el.text} num={i} key={el.title} />
+        <AccordianItem
+          currOpen={currOpen}
+          onOpen={setCurrOpen}
+          title={el.title}
+          num={i}
+          key={el.title}
+        >
+          {el.text}
+        </AccordianItem>
       ))}
     </div>
   );
