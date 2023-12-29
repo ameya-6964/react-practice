@@ -1,7 +1,7 @@
 import React from "react";
 import Friend from "./Friend";
 
-const initialFriends = [
+export const initialFriends = [
   {
     id: 118836,
     name: "Clark",
@@ -22,8 +22,7 @@ const initialFriends = [
   },
 ];
 
-const FriendsList = () => {
-  const friends = initialFriends;
+const FriendsList = ({ friends }) => {
   return (
     <ul>
       {friends.map((friend) => (
