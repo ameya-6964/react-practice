@@ -9,7 +9,7 @@ const Form = () => {
     // console.log(e.target[1].value);
     if (!description) return;
     const newItem = { description, quantity, packed: false, id: Date.now() };
-    console.log(newItem);
+    // console.log(newItem);
     setDescription("");
     setQuantity(1);
   };
