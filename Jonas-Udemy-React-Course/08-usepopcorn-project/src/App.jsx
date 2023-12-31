@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "./Components/Navbar";
 import Search from "./Components/Search";
 import NumResults from "./Components/NumResults";
@@ -54,10 +54,24 @@ const tempWatchedData = [
     userRating: 9,
   },
 ];
+const apiKey = import.meta.env.VITE_MOVIE_KEY;
+const searchString = `avengers`;
 
 const App = () => {
-  const [movies, setMovies] = useState(tempMovieData);
+  const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState(tempWatchedData);
+
+  useEffect(() => {
+    fetchMovie();
+  }, []);
+
+  const fetchMovie = async () => {
+    const res = await fetch(
+      `https://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}&s=${searchString}`
+    );
+    const data = await res.json();
+    setMovies(data.Search);
+  };
 
   return (
     <>
