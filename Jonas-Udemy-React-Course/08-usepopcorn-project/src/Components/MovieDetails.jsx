@@ -4,9 +4,25 @@ import Loading from "./Loading";
 
 const apiKey = import.meta.env.VITE_MOVIE_KEY;
 
-const MovieDetails = ({ selectedId, onCloseMovie }) => {
+const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched }) => {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [userRating, setUserRating] = useState("");
+
+  const handleAdd = () => {
+    const newWatchedMovie = {
+      imdbID: selectedId,
+      title,
+      year,
+      poster,
+      imdbRating: Number(imdbRating),
+      runtime: runtime.split(" ").at(0),
+      userRating,
+    };
+
+    onAddWatched(newWatchedMovie);
+    onCloseMovie();
+  };
 
   const {
     Title: title,
@@ -50,7 +66,9 @@ const MovieDetails = ({ selectedId, onCloseMovie }) => {
             </button>
             <img src={poster} alt={`Poster Of ${title}`} />
             <div className="details-overview">
-              <h2>{title}</h2>
+              <h2>
+                {title} {year}
+              </h2>
               <p>
                 {released} &bull; {runtime}
               </p>
@@ -63,7 +81,16 @@ const MovieDetails = ({ selectedId, onCloseMovie }) => {
           </header>
           <section>
             <div className="rating">
-              <StarRating maxRating={10} size={24} />
+              <StarRating
+                maxRating={10}
+                size={24}
+                onSetRating={setUserRating}
+              />
+              {userRating > 0 && (
+                <button onClick={handleAdd} className="btn-add">
+                  + Add To List
+                </button>
+              )}
             </div>
             <p>
               <em>{plot}</em>

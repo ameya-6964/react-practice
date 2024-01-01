@@ -29,6 +29,10 @@ const App = () => {
     setSelectedId(null);
   };
 
+  const handleAddWatched = (movie) => {
+    setWatched((watched) => [...watched, movie]);
+  };
+
   const fetchMovie = async () => {
     try {
       setIsLoading(true);
@@ -79,6 +83,7 @@ const App = () => {
             <MovieDetails
               selectedId={selectedId}
               onCloseMovie={handleCloseMovie}
+              onAddWatched={handleAddWatched}
             />
           ) : (
             <>
