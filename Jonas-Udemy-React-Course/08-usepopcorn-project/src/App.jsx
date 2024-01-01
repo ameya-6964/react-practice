@@ -37,12 +37,13 @@ const App = () => {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
   };
 
-  const fetchMovie = async () => {
+  /*  const fetchMovie = async (controller) => {
     try {
       setIsLoading(true);
       setError("");
       const res = await fetch(
-        `https://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}&s=${query}`
+        `https://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}&s=${query}`,
+        { signal: controller.signal }
       );
       if (!res.ok) throw new Error("Something Went Wrong With Fetching Movies");
       const data = await res.json();
@@ -53,15 +54,47 @@ const App = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }; */
 
   useEffect(() => {
-    if (!query.length && query.length < 3) {
+    const controller = new AbortController(); // Declare controller here
+
+    const fetchMovie = async () => {
+      // Move fetchMovie inside useEffect
+      try {
+        setIsLoading(true);
+        setError("");
+        const res = await fetch(
+          `https://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}&s=${query}`,
+          { signal: controller.signal }
+        );
+        if (!res.ok)
+          throw new Error("Something Went Wrong With Fetching Movies");
+        const data = await res.json();
+        if (data.Response === "False") throw new Error("Movie Not Found");
+        setMovies(data.Search);
+        setError("");
+      } catch (err) {
+        if (err.name !== "AbortError") {
+          setError(err.message);
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    if (!query.length || query.length < 3) {
       setMovies([]);
       setError("");
       return;
     }
+
     fetchMovie();
+
+    return () => {
+      controller.abort();
+    };
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
