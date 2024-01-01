@@ -33,6 +33,10 @@ const App = () => {
     setWatched((watched) => [...watched, movie]);
   };
 
+  const handleDeleteWatched = (id) => {
+    setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
+  };
+
   const fetchMovie = async () => {
     try {
       setIsLoading(true);
@@ -84,11 +88,15 @@ const App = () => {
               selectedId={selectedId}
               onCloseMovie={handleCloseMovie}
               onAddWatched={handleAddWatched}
+              watched={watched}
             />
           ) : (
             <>
               <WatchSummary watched={watched} />
-              <WatchMoviesList watched={watched} />
+              <WatchMoviesList
+                watched={watched}
+                onDeleteWatched={handleDeleteWatched}
+              />
             </>
           )}
         </Box>
