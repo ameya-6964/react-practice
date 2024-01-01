@@ -10,28 +10,26 @@ import WatchMoviesList from "./Components/WatchMovieList";
 import Loading from "./Components/Loading";
 import ErrorMessage from "./Components/ErrorMessage";
 import MovieDetails from "./Components/MovieDetails";
-
-const apiKey = import.meta.env.VITE_MOVIE_KEY;
+import { useMovies } from "./hooks/useMovies";
 
 const App = () => {
-  const [movies, setMovies] = useState([]);
   const [query, setQuery] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
   const [selectedId, setSelectedId] = useState(null);
-  // const [watched, setWatched] = useState([]);
+
   const [watched, setWatched] = useState(() => {
     const storedValue = localStorage.getItem("watched");
     return JSON.parse(storedValue);
   });
 
+  const { movies, isLoading, error } = useMovies(query, handleCloseMovie);
+
   const handleSelectMovie = (id) => {
     setSelectedId((selectedId) => (id === selectedId ? null : id));
   };
 
-  const handleCloseMovie = () => {
+  function handleCloseMovie() {
     setSelectedId(null);
-  };
+  }
 
   const handleAddWatched = (movie) => {
     setWatched((watched) => [...watched, movie]);
@@ -49,67 +47,6 @@ const App = () => {
     },
     [watched]
   );
-
-  /*  const fetchMovie = async (controller) => {
-    try {
-      setIsLoading(true);
-      setError("");
-      const res = await fetch(
-        `https://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}&s=${query}`,
-        { signal: controller.signal }
-      );
-      if (!res.ok) throw new Error("Something Went Wrong With Fetching Movies");
-      const data = await res.json();
-      if (data.Response === "False") throw new Error("Movie Not Found");
-      setMovies(data.Search);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setIsLoading(false);
-    }
-  }; */
-
-  useEffect(() => {
-    const controller = new AbortController(); // Declare controller here
-
-    const fetchMovie = async () => {
-      // Move fetchMovie inside useEffect
-      try {
-        setIsLoading(true);
-        setError("");
-        const res = await fetch(
-          `https://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}&s=${query}`,
-          { signal: controller.signal }
-        );
-        if (!res.ok)
-          throw new Error("Something Went Wrong With Fetching Movies");
-        const data = await res.json();
-        if (data.Response === "False") throw new Error("Movie Not Found");
-        setMovies(data.Search);
-        setError("");
-      } catch (err) {
-        if (err.name !== "AbortError") {
-          setError(err.message);
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    if (!query.length || query.length < 3) {
-      setMovies([]);
-      setError("");
-      return;
-    }
-
-    fetchMovie();
-
-    return () => {
-      controller.abort();
-    };
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query]);
 
   return (
     <>
