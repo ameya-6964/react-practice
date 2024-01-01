@@ -67,6 +67,20 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
     };
   }, [title]);
 
+  useEffect(() => {
+    const escKeyPressEvent = (e) => {
+      if (e.code === "Escape") {
+        onCloseMovie();
+      }
+    };
+
+    document.addEventListener("keydown", escKeyPressEvent);
+
+    return () => {
+      document.removeEventListener("keydown", escKeyPressEvent);
+    };
+  }, [onCloseMovie]);
+
   return (
     <div className="details">
       {isLoading ? (
