@@ -1,32 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { useKey } from "../hooks/useKey";
 
 const Search = ({ query, setQuery }) => {
-  //! How Not To Select DOM Elements
-  /*   useEffect(function () {
-    const el = document.querySelector(".search");
-    el.focus();
-  }, []); */
-
-  //* How To Correctly Select DOM Elements
   const inputEl = useRef(null);
-  useEffect(
-    function () {
-      const enterButtonPressed = (e) => {
-        if (document.activeElement === inputEl.current) return;
-        if (e.code === "Enter") {
-          inputEl.current.focus();
-          setQuery("");
-        }
-      };
 
-      document.addEventListener("keydown", enterButtonPressed);
-
-      return () => {
-        document.removeEventListener("keydown", enterButtonPressed);
-      };
-    },
-    [setQuery]
-  );
+  useKey("Enter", function () {
+    if (document.activeElement === inputEl.current) return;
+    inputEl.current.focus();
+    setQuery("");
+  });
 
   return (
     <input

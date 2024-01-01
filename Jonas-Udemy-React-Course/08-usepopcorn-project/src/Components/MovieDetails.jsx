@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import StarRating from "./StarRating";
 import Loading from "./Loading";
+import { useKey } from "../hooks/useKey";
 
 const apiKey = import.meta.env.VITE_MOVIE_KEY;
 
@@ -78,19 +79,7 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
     };
   }, [title]);
 
-  useEffect(() => {
-    const escKeyPressEvent = (e) => {
-      if (e.code === "Escape") {
-        onCloseMovie();
-      }
-    };
-
-    document.addEventListener("keydown", escKeyPressEvent);
-
-    return () => {
-      document.removeEventListener("keydown", escKeyPressEvent);
-    };
-  }, [onCloseMovie]);
+  useKey("Escape", onCloseMovie);
 
   return (
     <div className="details">
