@@ -33,26 +33,23 @@ body {
   outline-offset: 1.2rem;
 }
 
-.app-demo {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 60rem;
-  gap: 1rem;
-  padding: 6rem 0;
-  border: 2px solid #222;
-  outline: 2px solid #222;
-  outline-offset: 1.2rem;
+.btn-weather {
+  width: auto;
+  padding: 1.5rem;
+  text-align: center;
+  outline: none;
+  border: none;
+  background-color: #f59090;
+  color: black;
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: large;
+  cursor: pointer;
+  transition: all 0.5s linear;
 }
 
-.app-demo button {
-  width: 8rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  cursor: pointer;
+.btn-weather:hover {
+  background-color: #e9b8b1;
 }
 
 h1 {
@@ -91,7 +88,6 @@ input:focus {
   background-color: #f0d2ce;
   padding: 1.6rem 0 2rem;
   width: 12.8rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;

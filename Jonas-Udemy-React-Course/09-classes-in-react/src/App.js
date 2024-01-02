@@ -35,7 +35,7 @@ export function formatDay(dateStr) {
 
 export default class App extends React.Component {
   state = {
-    location: "India",
+    location: "",
     isLoading: false,
     displayLocation: "",
     weather: {},
@@ -84,7 +84,9 @@ export default class App extends React.Component {
             onChange={(e) => this.setState({ location: e.target.value })}
           />
         </div>
-        <button onClick={this.fetchWeather}>Get Weather</button>
+        <button className="btn-weather" onClick={this.fetchWeather}>
+          Get Weather
+        </button>
         {this.state.isLoading && <p className="loader">Loading....</p>}
 
         {this.state.weather.weathercode && (
