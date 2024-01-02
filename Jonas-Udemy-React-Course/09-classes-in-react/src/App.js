@@ -1,6 +1,7 @@
 import React from "react";
+import Weather from "./components/Weather";
 
-function getWeatherIcon(wmoCode) {
+export function getWeatherIcon(wmoCode) {
   const icons = new Map([
     [[0], "☀️"],
     [[1], "🌤"],
@@ -26,7 +27,7 @@ function convertToFlag(countryCode) {
   return String.fromCodePoint(...codePoints);
 }
 
-function formatDay(dateStr) {
+export function formatDay(dateStr) {
   return new Intl.DateTimeFormat("en", {
     weekday: "short",
   }).format(new Date(dateStr));
@@ -89,6 +90,13 @@ export default class App extends React.Component {
         </div>
         <button onClick={this.fetchWeather}>Get Weather</button>
         {this.state.isLoading && <p className="loader">Loading....</p>}
+
+        {this.state.weather.weathercode && (
+          <Weather
+            weather={this.state.weather}
+            location={this.state.displayLocation}
+          />
+        )}
       </div>
     );
   }
