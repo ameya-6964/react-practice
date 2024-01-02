@@ -37,8 +37,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 112rem;
-  gap: 4rem;
+  width: 60rem;
+  gap: 1rem;
   padding: 6rem 0;
   border: 2px solid #222;
   outline: 2px solid #222;
@@ -46,12 +46,13 @@ body {
 }
 
 .app-demo button {
-  width: 5rem;
+  width: 8rem;
   height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
+  cursor: pointer;
 }
 
 h1 {
