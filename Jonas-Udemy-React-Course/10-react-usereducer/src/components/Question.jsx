@@ -1,7 +1,10 @@
-const Question = () => {
+import Option from "./Option";
+
+const Question = ({ question, dispatch, answer }) => {
   return (
     <div>
-      <h1> Questions</h1>
+      <h4>{question.question}</h4>
+      <Option question={question} dispatch={dispatch} answer={answer} />
     </div>
   );
 };
