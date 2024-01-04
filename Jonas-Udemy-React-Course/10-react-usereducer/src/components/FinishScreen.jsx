@@ -1,4 +1,4 @@
-const FinishScreen = ({ points, maxPossiblePoints, highscore, dispatch }) => {
+const FinishScreen = ({ points, maxPossiblePoints, dispatch }) => {
   const percentage = (points / maxPossiblePoints) * 100;
 
   let emoji;
@@ -7,20 +7,22 @@ const FinishScreen = ({ points, maxPossiblePoints, highscore, dispatch }) => {
   if (percentage >= 60 && percentage < 80) emoji = "🥈";
   if (percentage >= 50 && percentage < 60) emoji = "🥉";
   if (percentage <= 50 && percentage > 35) emoji = "😃";
-  if (percentage <= 35) emoji = "🤦🤦‍♀️";
+  if (percentage <= 35) emoji = "🤦";
 
   return (
     <>
       <p className="result">
-        <span>{emoji}</span> You Scored <strong>{points}</strong> out of
+        <span>{emoji}</span> You Scored <strong>{points}</strong> out of&nbsp;
         {maxPossiblePoints} ({Math.ceil(percentage)}%)
       </p>
-      <p className="highscore">(Highscore: {highscore} Points)</p>
+
+      <br />
+      <br />
       <button
         className="btn btn-ui"
         onClick={() => dispatch({ type: "reset" })}
       >
-        Finish
+        Try Again
       </button>
     </>
   );

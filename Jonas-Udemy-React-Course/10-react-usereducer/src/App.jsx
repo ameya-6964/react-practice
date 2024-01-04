@@ -21,6 +21,7 @@ const initialState = {
 };
 
 function reducer(state, action) {
+  const question = state.questions.at(state.index);
   switch (action.type) {
     case "dataReceived":
       return { ...state, questions: action.payload, status: "ready" };
@@ -32,8 +33,6 @@ function reducer(state, action) {
       return { ...state, status: "active" };
 
     case "newAnswer":
-      const question = state.questions.at(state.index);
-
       return {
         ...state,
         answer: action.payload,
@@ -49,6 +48,7 @@ function reducer(state, action) {
       return {
         ...state,
         status: "finished",
+        points: state.points,
         highscore:
           state.points > state.highscore ? state.highscore : state.points,
       };
@@ -56,7 +56,8 @@ function reducer(state, action) {
     case "reset":
       return {
         ...initialState,
-        question: state.questions,
+        questions: state.questions,
+        highscore: state.highscore,
         status: "ready",
       };
 
