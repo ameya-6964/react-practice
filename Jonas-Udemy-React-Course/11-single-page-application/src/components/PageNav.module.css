@@ -1,0 +1,15 @@
+.nav {
+  background-color: orangered;
+  font-size: 2rem;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.nav ul > li a {
+  text-decoration: none;
+}
