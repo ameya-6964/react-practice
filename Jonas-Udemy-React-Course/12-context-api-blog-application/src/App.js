@@ -13,7 +13,7 @@ export function createRandomPost() {
 }
 
 //! Step 1) Create New Context
-const PostContext = createContext();
+export const PostContext = createContext();
 
 function App() {
   const [posts, setPosts] = useState(() =>
@@ -67,12 +67,7 @@ function App() {
           {isFakeDark ? "☀️" : "🌙"}
         </button>
 
-        <Header
-          posts={searchedPosts}
-          onClearPosts={handleClearPosts}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-        />
+        <Header />
         <Main posts={searchedPosts} onAddPost={handleAddPost} />
         <Archive onAddPost={handleAddPost} />
         <Footer />
