@@ -13,8 +13,7 @@ function reducer(state = initialState, action) {
     case "account/withdraw":
       return { ...state, balance: state.balance - action.payload };
     case "account/requestLoan":
-      if (state.load > 0) return state;
-      // TODO
+      if (state.loan > 0) return state;
       return {
         ...state,
         loan: action.payload.amount,
@@ -36,7 +35,7 @@ function reducer(state = initialState, action) {
 
 const store = createStore(reducer);
 
-store.dispatch({ type: "account/deposit", payload: 500 });
+/* store.dispatch({ type: "account/deposit", payload: 500 });
 console.log(store.getState());
 store.dispatch({ type: "account/withdraw", payload: 200 });
 console.log(store.getState());
@@ -46,4 +45,29 @@ store.dispatch({
 });
 console.log(store.getState());
 store.dispatch({ type: "account/payLoan" });
+console.log(store.getState()); */
+
+function deposit(amount) {
+  return { type: "account/deposit", payload: amount };
+}
+function withdraw(amount) {
+  return { type: "account/withdraw", payload: amount };
+}
+function requestLoan(amount, purpose) {
+  return {
+    type: "account/requestLoan",
+    payload: { amount: amount, purpose: purpose },
+  };
+}
+function payloan() {
+  return { type: "account/payLoan" };
+}
+
+store.dispatch(deposit(10000));
+console.log(store.getState());
+store.dispatch(withdraw(3000));
+console.log(store.getState());
+store.dispatch(requestLoan(10000, "Buy Mobile"));
+console.log(store.getState());
+store.dispatch(payloan());
 console.log(store.getState());
