@@ -6,7 +6,7 @@ import { useAuth } from "../contexts/FakeAuthContext";
 import styles from "./Login.module.css";
 
 export default function Login() {
-  const [email, setEmail] = useState("jack@example.com");
+  const [email, setEmail] = useState("ameya@gmail.com");
   const [password, setPassword] = useState("qwerty");
 
   const { login, isAuthenticated } = useAuth();
