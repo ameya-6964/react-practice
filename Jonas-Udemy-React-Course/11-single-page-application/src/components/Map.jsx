@@ -78,7 +78,7 @@ export default function Map() {
             </Popup>
           </Marker>
         ))}
-        {mapLat && <ChangeCenter position={[mapLat, mapLng]} />}
+        {mapLat && <ChangeCenter position={mapPosition} />}
         <DetectClick />
       </MapContainer>
     </div>
