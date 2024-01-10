@@ -13,14 +13,14 @@ const formatDate = (date) =>
     weekday: "long",
   }).format(new Date(date));
 
-const flagemojiToPNG = (flag) => {
-  var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
-    .map((char) => String.fromCharCode(char - 127397).toLowerCase())
-    .join("");
+/* function flagemojiToPNG(flag) {
+  var countryCode = Array?.from(flag, (codeUnit) => codeUnit.codePointAt())
+    ?.map((char) => String.fromCharCode(char - 127397).toLowerCase())
+    ?.join("");
   return (
     <img src={`https://flagcdn.com/24x18/${countryCode}.png`} alt="flag" />
   );
-};
+} */
 
 function City() {
   const { id } = useParams();
@@ -33,16 +33,14 @@ function City() {
     [id]
   );
 
-  const { cityName, emoji, date, notes } = currentCity;
+  const { cityName, date, notes } = currentCity;
 
   if (isLoading) return <Spinner />;
   return (
     <div className={styles.city}>
       <div className={styles.row}>
         <h6>City name</h6>
-        <h3>
-          <span>{flagemojiToPNG(emoji)}</span> {cityName}
-        </h3>
+        <h3>{cityName}</h3>
       </div>
 
       <div className={styles.row}>
