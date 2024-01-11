@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deposit, withdraw, requestLoan, payloan } from "./accountSlice";
 
 function AccountOperations() {
@@ -9,11 +9,7 @@ function AccountOperations() {
   const [loanPurpose, setLoanPurpose] = useState("");
   const [currency, setCurrency] = useState("INR");
   const dispatch = useDispatch();
-
-  /*  function handleClick() {
-    if (!fullName || !nationalId) return;
-    dispatch(createCustomer(fullName, nationalId));
-  } */
+  const loan = useSelector((state) => state.account.loan);
 
   function handleDeposit() {
     if (!depositAmount) return;
@@ -88,7 +84,7 @@ function AccountOperations() {
         </div>
 
         <div>
-          <span>Pay back ₹&nbsp;&nbsp;</span>
+          <span>Pay back ₹ {loan}&nbsp;&nbsp;</span>
           <button onClick={handlePayLoan}>Pay loan</button>
         </div>
       </div>
